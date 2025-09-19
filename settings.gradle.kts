@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "TodaysTasks"
 include(":app")
- 
+include(":wearos-app")
