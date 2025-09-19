@@ -77,6 +77,10 @@ dependencies {
     // Wear OS Support
     implementation(libs.androidx.wear)
 
+    implementation (libs.play.services.wearable)
+    implementation (libs.kotlinx.coroutines.play.services)
+    implementation (libs.gson)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

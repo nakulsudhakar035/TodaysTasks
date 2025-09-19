@@ -2,6 +2,7 @@ package com.nakuls.wearos_app.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.nakuls.wearos_app.data.sync.WatchSyncService
 import com.nakuls.wearos_app.domain.model.Task
 import com.nakuls.wearos_app.domain.usecase.GetTasksUseCase
 import com.nakuls.wearos_app.domain.usecase.InsertTaskUseCase
@@ -13,13 +14,16 @@ import kotlinx.coroutines.launch
 class WearTasksViewModel(
     private val getTasksUseCase: GetTasksUseCase,
     private val insertTaskUseCase: InsertTaskUseCase,
-    private val toggleTaskUseCase: ToggleTaskUseCase
+    private val toggleTaskUseCase: ToggleTaskUseCase,
+    private val syncService: WatchSyncService
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<WearTasksUiState>(WearTasksUiState.Loading("Loading tasks ..."))
     val uiState: StateFlow<WearTasksUiState> = _uiState
 
+
     init {
+        syncService.startListeningForUpdates()
         loadTasks()
     }
 

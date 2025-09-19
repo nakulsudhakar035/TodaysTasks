@@ -1,7 +1,9 @@
 package com.nakuls.wearos_app.di
 
 import com.nakuls.wearos_app.data.local.database.WearDatabase
+import com.nakuls.wearos_app.data.repository.TaskRepository
 import com.nakuls.wearos_app.data.repository.TaskRepositoryImpl
+import com.nakuls.wearos_app.data.sync.WatchSyncService
 import com.nakuls.wearos_app.domain.usecase.GetTasksUseCase
 import com.nakuls.wearos_app.domain.usecase.InsertTaskUseCase
 import com.nakuls.wearos_app.domain.usecase.ToggleTaskUseCase
@@ -14,6 +16,10 @@ val wearAppModule = module {
     // Database
     single { WearDatabase.getDatabase(androidContext()) }
     single { get<WearDatabase>().taskDao() }
+    single<TaskRepository> {
+        TaskRepositoryImpl(get())
+    }
+    single { WatchSyncService(androidContext(), get()) }
 
     // Repository
     single { TaskRepositoryImpl(get()) }
@@ -23,5 +29,6 @@ val wearAppModule = module {
     factory { ToggleTaskUseCase(get()) }
     factory { InsertTaskUseCase(get()) }
 
-    viewModel { WearTasksViewModel(get(), get(), get()) }
+    viewModel { WearTasksViewModel(get(), get(), get(), get()) }
+
 }

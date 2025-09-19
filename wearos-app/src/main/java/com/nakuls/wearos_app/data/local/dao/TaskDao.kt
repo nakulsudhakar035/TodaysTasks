@@ -14,6 +14,9 @@ interface TaskDao {
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insertTask(task: TaskEntity): Long
 
+    @Insert(onConflict = OnConflictStrategy.ABORT)
+    suspend fun insertAllTasks(tasks: List<TaskEntity>)
+
     @Query("SELECT * FROM tasks ORDER BY createdAt DESC")
     fun getTasks(): Flow<List<TaskEntity>>
 

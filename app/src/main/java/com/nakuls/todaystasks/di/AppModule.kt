@@ -4,11 +4,13 @@ import android.content.Context
 import androidx.room.Room
 import com.nakuls.todaystasks.data.local.database.AppDatabase
 import com.nakuls.todaystasks.data.repository.TaskRepositoryImpl
+import com.nakuls.todaystasks.data.sync.PhoneSyncService
 import com.nakuls.todaystasks.domain.repository.TaskRepository
 import com.nakuls.todaystasks.domain.usecase.AddTaskUseCase
 import com.nakuls.todaystasks.domain.usecase.DeleteTaskUseCase
 import com.nakuls.todaystasks.domain.usecase.GetTasksUseCase
 import com.nakuls.todaystasks.domain.usecase.UpdateTaskUseCase
+import com.nakuls.todaystasks.presentation.task.PhoneTasksViewModel
 import com.nakuls.todaystasks.presentation.task.TaskViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -22,6 +24,9 @@ val appModule = module {
     // Repository
     single<TaskRepository> { TaskRepositoryImpl(get()) }
 
+    // Services
+    single { PhoneSyncService(androidContext()) }
+
     // Use Cases
     factory { GetTasksUseCase(get()) }
     factory { AddTaskUseCase(get()) }
@@ -31,7 +36,9 @@ val appModule = module {
     // ViewModels
     viewModel { TaskViewModel(
         get(), get(), get(), get()
-    ) }
+    )}
+    viewModel { PhoneTasksViewModel(get(), get()) }
+
 }
 
 private fun createDatabase(context: Context): AppDatabase {

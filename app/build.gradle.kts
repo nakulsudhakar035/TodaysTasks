@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation (libs.play.services.wearable)
 
     // Navigation
     implementation(libs.androidx.navigation.compose)
@@ -66,6 +67,10 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
     implementation(libs.koin.androidx.workmanager)
+
+    implementation (libs.play.services.wearable)
+    implementation (libs.kotlinx.coroutines.play.services)
+    implementation (libs.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
