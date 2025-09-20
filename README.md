@@ -1,71 +1,92 @@
 Today's Tasks 📱✅
-A modern, efficient Android task management app built with cutting-edge technologies to showcase best practices in Android development.
+A simple To-Do List application built with Android Jetpack Compose to practice clean architecture, modern Android development patterns, and cross-device support.
+
+This project includes:
+
+📱 Android App: A mobile to-do list application with task creation, completion tracking, and local persistence.
+
+⌚ Wear OS Companion App: A lightweight module designed for Wear OS smartwatches, allowing users to quickly view and check off tasks from their wrist.
 
 🚀 Features
-Create, read, update, and delete tasks with intuitive UI
 
-Real-time synchronization between UI and database
+Phone app
 
-Modern Material Design 3 interface with dark/light theme support
+.Create, read, update, and delete tasks with intuitive UI
 
-Location-based tasks with geolocation support
+.Real-time synchronization between UI and database
 
-Offline functionality with local database persistence
+.Modern Material Design 3 interface with dark/light theme support
 
-Clean architecture with proper separation of concerns
+.Location-based tasks with geolocation support
+
+.Offline functionality with local database persistence
+
+.Clean architecture with proper separation of concerns
+
+Wear OS App
+
+.Companion Wear OS module integrated in the same project
+
+.View today’s tasks at a glance
+
+.Check off completed tasks directly from the watch
+
+.Built with Compose for Wear OS for optimized small-screen interactions
+
+.Data synced with the phone app for consistency
 
 🛠️ Technology Stack
-Architecture & Patterns
-MVVM (Model-View-ViewModel) - Architecture pattern
+.Architecture & Patterns
+..MVVM (Model-View-ViewModel) - Architecture pattern
 
-Clean Architecture - Layered approach for separation of concerns
+..Clean Architecture - Layered approach for separation of concerns
 
-Repository Pattern - Single source of truth for data
+..Repository Pattern - Single source of truth for data
 
-Unidirectional Data Flow - Predictable state management
+..Unidirectional Data Flow - Predictable state management
 
-UI & Framework
-Jetpack Compose - Modern declarative UI toolkit
+.UI & Framework
+..Jetpack Compose - Modern declarative UI toolkit
 
-Material Design 3 - Latest Google design system
+..Material Design 3 - Latest Google design system
 
-Android Jetpack Components:
+.Android Jetpack Components:
 
-Navigation Compose - Type-safe navigation
+..Navigation Compose - Type-safe navigation
 
-ViewModel - Lifecycle-aware UI data holder
+..ViewModel - Lifecycle-aware UI data holder
 
-StateFlow - Reactive state management
+..StateFlow - Reactive state management
 
-Lifecycle-aware components - Proper lifecycle management
+.Lifecycle-aware components - Proper lifecycle management
 
-Dependency Injection
-Koin - Lightweight dependency injection framework
+.Dependency Injection
+..Koin - Lightweight dependency injection framework
 
-Dependency Inversion -遵循 SOLID principles
+.Dependency Inversion - SOLID principles
 
-Database & Persistence
-Room Database - SQLite abstraction layer
+.Database & Persistence
+..Room Database - SQLite abstraction layer
 
-Flow - Real-time data observers
+.Flow - Real-time data observers
 
-Type Converters - Complex data type handling
+.Type Converters - Complex data type handling
 
-Asynchronous Programming
-Kotlin Coroutines - Asynchronous programming
+.Asynchronous Programming
+..Kotlin Coroutines - Asynchronous programming
 
-Flow - Reactive streams
+..Flow - Reactive streams
 
-StateFlow/SharedFlow - State management
+..StateFlow/SharedFlow - State management
 
-Modern Development Practices
-Kotlin DSL - Type-safe Gradle configuration
+.Modern Development Practices
+..Kotlin DSL - Type-safe Gradle configuration
 
-KSP (Kotlin Symbol Processing) - Faster than KAPT
+..KSP (Kotlin Symbol Processing) - Faster than KAPT
 
-Sealed Interfaces/Classes - Type-safe state management
+..Sealed Interfaces/Classes - Type-safe state management
 
-Extension Functions - Kotlin idiomatic code
+..Extension Functions - Kotlin idiomatic code
 
 🎯 Key Learning Outcomes
 Mastered Jetpack Compose for modern UI development
