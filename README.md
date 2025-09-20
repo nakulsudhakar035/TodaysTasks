@@ -1,4 +1,5 @@
 Today's Tasks 📱✅
+
 A simple To-Do List application built with Android Jetpack Compose to practice clean architecture, modern Android development patterns, and cross-device support.
 
 This project includes:
